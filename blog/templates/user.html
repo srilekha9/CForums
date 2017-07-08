@@ -1,0 +1,87 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <style>
+        .row > div {
+            margin-top:10px;
+            padding: 30px;
+            outline: 2px solid #ccc;
+            outline-offset: -10px;
+            -moz-outline-radius: 10px;
+            -webkit-outline-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class = "panel panel-primary">
+   <div class = "panel-heading">
+      <i><strong><font size = "5" face = "verdana">CFORUMS</font></strong></i>
+      <a href = "/"><i><strong><font size = "5" face = "verdana"><img src = "{% static "logout.jpg" %}" alt = "Login" width = "120" height = "50" align = "right"/></font></strong></i></a>
+   </div>
+   
+   
+  <div class="col">
+    <div class="col-sm-3" style="background-color:lavender;">
+			<h3><a href = "/add_quiz">Create Quiz</a></h3>
+                    <h3><a href = "/AddContest">Create Contests</a></h3>
+                    <h3>Quizes</h3>
+                    {%if Quiz%}
+                    <ul>
+							{% for q in Quiz %}
+								<li>
+									<a href = "/Quiz/{{q.Titleid}}">{{ q.Titleid }}</a></li>
+									{% endfor %}
+							</ul>
+					{%endif%}
+					<h3>Contests</h3>
+					{%if Contest%}
+                    <ul>
+							{% for q in Contest %}
+								<li>
+									<a href = "/contest/{{q.PTitle}}">{{ q.PTitle }}</a></li>
+									{% endfor %}
+							</ul>
+					{%endif%}
+    </div>
+      
+    <div class="col-sm-6" style="background-color:lavender;">
+          <h3>NewsFeed</h3>
+                    	 {%if Posts%}
+                    <ul>
+							{% for p in Posts %}
+								
+								    <li>{{ p.UPosts_Description }}</li>
+									<img src="{% get_media_prefix %}{{p.UPosts_Photo}}" class="img-rounded" width="400" height="200">
+									{% endfor %}
+							</ul>
+					{%endif%}
+    </div>
+    <div class="col-sm-3" style="background-color:lavender;">
+          <h3><a href = "/profile">Profile</a></h3>
+                    <h3><a href='/UploadPosting'>UploadPost</a></h3>
+                    <h3><a href='/CreateGroup'>CreateGroup</a></h3>
+                    <h3>Groups</h3>
+							{% if Group %}
+							<ul>
+							{% for g in Group %}
+								<li>
+									<a href = "/group/{{g.Gname}}">{{ g.Gname }}</a></li>
+									{% endfor %}
+							</ul>
+							{% else %}
+							<p>No Group found.</p>
+							{% endif %}
+
+     </div>
+    </div>
+    </div></div>
+</body>
+</html>
+

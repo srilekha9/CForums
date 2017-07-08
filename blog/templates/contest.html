@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+</head>
+<body>
+<div class = "panel panel-primary">
+   <div class = "panel-heading">
+      <a href = '/home/'><img src = "{% static "home.png" %}" alt = "HOME" width = "30" height = "30" border = "0"/></a>
+      &nbsp;&nbsp;<i><strong><font size = "5" face = "verdana">CFORUMS</font></strong></i>
+         <a href = "/logout/"><i><strong><font size = "5" face = "verdana"><img src = "{% static "logout.jpg" %}" alt = "Login" width = "120" height = "50" align = "right"/></font></strong></i></a></div>
+ </div>
+ <div>  
+   	<i><font face = "TimesNewRoman" color = "00bfff" size = "6"><center>{{cname.PTitle}}</font></i></h3></center></div><hr>
+			</center>
+			<b><i><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description :-</h3></b><i>
+            <p><font size = '4.5'>&nbsp;<b></center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{cname.PDescription}}</font></a></p></b>
+
+<br><br>
+{% csrf_token %}
+<h4>
+<table align = "center">{{ form.as_table}}</table><br><br>
+<center><input type = "submit" value = 'Submit'/></center></h4>
+</body>
+</html>
+			

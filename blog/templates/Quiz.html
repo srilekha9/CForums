@@ -1,0 +1,142 @@
+{% load static %}
+<html>
+<div class = "panel panel-primary">
+   <div class = "panel-heading">
+   <a href = "/home/"><img src = "{% static "home.png" %}" alt = "HOME" width = "30" height = "30" border = "0"/></a>
+      <i><strong><font size = "5" face = "verdana">CFORUMS</font></i><a href = "/logout/"><i><strong><font size = "5" face = "verdana"><img src = "{% static "logout.jpg" %}" alt = "Login" width = "120" height = "50" align = "right"/></font></strong></i></a></i>
+   </div></script>
+<head>
+<title>Quiz</title>
+<script type = text/javaScript>
+        function Func()
+        {
+            var A1 = document.getElementById('Answer1').value;
+            var A2 = document.getElementById('Answer2').value;
+            var A3 = document.getElementById('Answer3').value;
+            var A4 = document.getElementById('Answer4').value;
+            var A5 = document.getElementById('Answer5').value;
+            var rate_value1,rate_value2,rate_value3,rate_value4,rate_value5;
+            if (document.getElementById('opt1radio1').checked) {
+              rate_value1 = document.getElementById('opt1radio1').value;
+            }
+            else if (document.getElementById('opt1radio2').checked) {
+              rate_value1 = document.getElementById('opt1radio2').value;
+            }
+            else if (document.getElementById('opt1radio3').checked) {
+              rate_value1 = document.getElementById('opt1radio3').value;
+            }
+            else if (document.getElementById('opt1radio4').checked) {
+              rate_value1 = document.getElementById('opt1radio4').value;
+            }
+            if (document.getElementById('opt2radio1').checked) {
+              rate_value2 = document.getElementById('opt2radio1').value;
+            }
+            else if(document.getElementById('opt2radio2').checked) {
+              rate_value2 = document.getElementById('opt2radio2').value;
+            }
+            else if (document.getElementById('opt2radio3').checked) {
+              rate_value2 = document.getElementById('opt2radio3').value;
+            }
+            else if (document.getElementById('opt2radio4').checked) {
+              rate_value2 = document.getElementById('opt2radio4').value;
+            }
+            if (document.getElementById('opt3radio1').checked) {
+              rate_value3 = document.getElementById('opt3radio1').value;
+            }
+            else if (document.getElementById('opt3radio2').checked) {
+              rate_value3 = document.getElementById('opt3radio2').value;
+            }
+            else if (document.getElementById('opt3radio3').checked) {
+              rate_value3 = document.getElementById('opt3radio3').value;
+            }
+            else if (document.getElementById('opt3radio4').checked) {
+              rate_value3 = document.getElementById('opt3radio4').value;
+            }
+            if (document.getElementById('opt4radio1').checked) {
+              rate_value4 = document.getElementById('opt4radio1').value;
+            }
+            else if (document.getElementById('opt4radio2').checked) {
+              rate_value4 = document.getElementById('opt5radio2').value;
+            }
+            else if (document.getElementById('opt4radio3').checked) {
+              rate_value4 = document.getElementById('opt5radio3').value;
+            }
+            else if (document.getElementById('opt4radio4').checked) {
+              rate_value4 = document.getElementById('opt5radio4').value;
+            }
+            if (document.getElementById('opt5radio1').checked) {
+              rate_value5 = document.getElementById('opt5radio1').value;
+            }
+            else if (document.getElementById('opt5radio2').checked) {
+              rate_value5 = document.getElementById('opt5radio2').value;
+            }
+            else if (document.getElementById('opt5radio3').checked) {
+              rate_value5 = document.getElementById('opt5radio3').value;
+            }
+            else if (document.getElementById('opt5radio4').checked) {
+              rate_value5 = document.getElementById('opt5radio4').value;
+            }
+            var x = 0;
+            if(A1==rate_value1) {
+                x += 1;
+            }
+            if(A2==rate_value2) {
+                x += 1;
+            }
+            if(A3==rate_value3) {
+                x += 1;
+            }
+            if(A4==rate_value4) {
+                x += 1;
+            }
+            if(A5==rate_value5) {
+                x += 1;
+            }
+            
+            alert("Your Score is: "+x)
+        }
+    </script>
+</head>
+</div>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<body >
+ {{ Title.Titleid }}
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Question :- {{ Title.Question1 }}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;                <input type="radio" name="optradio1" id = "opt1radio1" value = 'A'>{{ Title.A1 }}
+&nbsp;&nbsp;&nbsp;&nbsp;                <input type="radio" name="optradio1" id = "opt1radio2" value = 'B'>{{ Title.B1 }}
+&nbsp;&nbsp;&nbsp;&nbsp;                <input type="radio" name="optradio1" id = "opt1radio3" value = 'C'>{{ Title.C1 }}
+&nbsp;&nbsp;&nbsp;&nbsp;                <input type="radio" name="optradio1" id = "opt1radio4" value = 'D'>{{ Title.D1 }}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;            Question :- {{ Title.Question2 }}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;                <input type="radio" name="optradio2" id = "opt2radio1" value = 'A'>{{ Title.A2 }}
+  &nbsp;&nbsp;&nbsp;&nbsp;              <input type="radio" name="optradio2" id = "opt2radio2" value = 'B'>{{ Title.B2 }}
+&nbsp;&nbsp;&nbsp;&nbsp;                <input type="radio" name="optradio2" id = "opt2radio3" value = 'C'>{{ Title.C2 }}
+ &nbsp;&nbsp;&nbsp;&nbsp;               <input type="radio" name="optradio2" id = "opt2radio4" value = 'D'>{{ Title.D2 }}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;           Question :- {{ Title.Question3 }}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;               <input type="radio" name="optradio3" id = "opt3radio1" value = 'A'>{{ Title.A3 }}
+ &nbsp;&nbsp;&nbsp;&nbsp;               <input type="radio" name="optradio3" id = "opt3radio2" value = 'B'>{{ Title.B3 }}
+ &nbsp;&nbsp;&nbsp;&nbsp;               <input type="radio" name="optradio3" id = "opt3radio3" value = 'C'>{{ Title.C3 }}
+&nbsp;&nbsp;&nbsp;&nbsp;                <input type="radio" name="optradio3" id = "opt3radio4" value = 'D'>{{ Title.D3 }}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;           Question :- {{ Title.Question4 }}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;                <input type="radio" name="optradio4" id = "opt4radio1" value = 'A'>{{ Title.A4 }}
+ &nbsp;&nbsp;&nbsp;&nbsp;               <input type="radio" name="optradio4" id = "opt4radio2" value = 'B'>{{ Title.B4 }}
+ &nbsp;&nbsp;&nbsp;&nbsp;               <input type="radio" name="optradio4" id = "opt4radio3" value = 'C'>{{ Title.C4 }}
+ &nbsp;&nbsp;&nbsp;&nbsp;               <input type="radio" name="optradio4" id = "opt4radio4" value = 'D'>{{ Title.D4 }}<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;           Question :- {{ Title.Question5 }}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;                <input type="radio" name="optradio5" id = "opt5radio1" value = 'A'>{{ Title.A5 }}
+&nbsp;&nbsp;&nbsp;&nbsp;                <input type="radio" name="optradio5" id = "opt5radio2" value = 'B'>{{ Title.B5 }}
+&nbsp;&nbsp;&nbsp;&nbsp;                <input type="radio" name="optradio5" id = "opt5radio3" value = 'C'>{{ Title.C5 }}
+&nbsp;&nbsp;&nbsp;&nbsp;                <input type="radio" name="optradio5" id = "opt5radio4" value = 'D'>{{ Title.D5 }}
+            <input type = "hidden" id = "Answer1" name = "Answer1" value = {{Title.Answer1}}>
+            <input type = "hidden" id = "Answer2" name = "Answer1" value = {{Title.Answer2}}>
+            <input type = "hidden" id = "Answer3" name = "Answer1" value = {{Title.Answer3}}>
+            <input type = "hidden" id = "Answer4" name = "Answer1" value = {{Title.Answer4}}>
+            <input type = "hidden" id = "Answer5" name = "Answer1" value = {{Title.Answer5}}><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button onclick="Func()">Submit Answers</button>
+            <p id = "demo"></p></body>
+    
+</html>

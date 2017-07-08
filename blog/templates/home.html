@@ -1,0 +1,42 @@
+{% load static %}
+<html>
+<head>
+<title>Login</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</script> 
+</head>
+<body>
+<div class = "panel panel-primary">
+   <div class = "panel-heading">
+      
+      &nbsp;&nbsp;<i><strong><font size = "5" face = "verdana">CFORUMS</font></strong></i>
+      <a href = "register/"><img src = "{% static "register.jpg" %}" alt = "Login" width = "120" height = "50" align = "right"/></a>
+      <a href = "login/"><img src = "{% static "login.jpg" %}" alt = "Register" width = "120" height = "50" boarder = "0" align = "right"/></a>
+   </div>
+
+<div class="w3-content w3-section" height = "450" width = "900" >
+  <img class="mySlides" src= "{% static "/24-VJ-HINDU1.jpeg" %}" width = '1360' height = "550" alt = "dhgfh">
+  <img class="mySlides" src="{% static "/28.jpg" %}" width = '1360' height = "550" >
+  <img class="mySlides" src="{% static "/cogniscente.jpg" %}" width = '1360' height = "550" >
+   <img class="mySlides" src="{% static "/index.jpeg" %}" width = '1360' height = "550" >
+</div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>

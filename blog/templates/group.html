@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+<div class = "panel panel-primary">
+   <div class = "panel-heading">
+      <a href = "/home/"><img src = "{% static "home.png" %}" alt = "HOME" width = "30" height = "30" border = "0"/></a>
+      &nbsp;&nbsp;<i><strong><font size = "5" face = "verdana">CFORUMS</font></strong></i>
+         <a href = "/logout/"><i><strong><font size = "5" face = "verdana"><img src = "{% static "logout.jpg" %}" alt = "Login" width = "120" height = "50" align = "right"/></font></strong></i></a></div>
+   <div class="row-sm-4" style="background-color:lavender;">
+			<h3><h4><u><strong><font face = "verdana" >GroupName:</font></strong></u></h4>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i><font face = "TimesNewRoman" color = "00bfff" size = "6">{{gname.Gname}}</font></i></h3>
+<center>
+            
+            	<img src="{% get_media_prefix %}{{gname.CoverPhoto}}" alt="Cover Photo"  width = "1000" height ="250" > 
+</center>
+    </div>
+      <div class="row">
+    <div class="col-sm-3" style="background-color:lavender;">
+   
+  </form>
+  <ul>
+    <a href = "/grp_post/{{gname.Gname}}"><h4><u><strong><font face = "verdana">Post</font></strong></u></h4></a>
+    <!--<a href = "/search"><h4><u><strong><font face = "verdana">AddPeople</font></strong></u></h4></a>!-->
+    <h4><u><strong><font face = "verdana">Groups</font></strong></u></h4>
+		{%for c in users %}
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href= "/group/{{c.Gname}}" ><font size = '4.5'>{{c.Gname}}</font></a></p>
+            {% endfor %}
+    </div>
+   
+    <div class="col-sm-9" style="background-color:lavender;">
+        <br><br><br>
+        {%for img in img %}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{img.Description}}<br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% get_media_prefix %}{{img.group_post}}" alt="Cover Photo"  width = "400" height ="200" ><br><br><br>
+        {% endfor %}
+    </div>
+        
+    </div>
+
+  </div>
+</div>
+
+   </div>
+</div>
+
+
+</body>
+</html>
+    
